@@ -114,7 +114,7 @@ export default function OtpVerification() {
             </div>
 
           <button type="submit" className="login-btn">
-            Verify OTP
+            Verify
           </button>
         </form>
 

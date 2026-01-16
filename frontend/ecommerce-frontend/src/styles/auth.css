@@ -356,4 +356,26 @@
     gap: 8px;
   }
 }
+/* Password tips box */
+.password-tips {
+  margin-top: 24px;
+  text-align: left;
+  font-size: 14px;
+  color: #444;
+}
+
+.password-tips h4 {
+  margin-bottom: 8px;
+  color: #0a2a66;
+  font-size: 18px;
+}
+
+.password-tips ul {
+  padding-left: 18px;
+}
+
+.password-tips li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
 
