@@ -1,0 +1,359 @@
+/*Page background*/
+.auth-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a2a66, #f5a623);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+.auth-card {
+  background: #ffffff;
+  padding: 32px 28px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+/* Logo */
+.auth-logo {
+  width: 130px;
+  margin-bottom: 10px;
+}
+
+/* Heading */
+.auth-card h2 {
+  color: #0a2a66;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* Inputs */
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: #0a2a66;
+}
+
+/* Password wrapper */
+.password-box {
+  position: relative;
+  width: 100%;
+}
+
+/* Space for icon */
+.password-box input {
+  padding-right: 44px;
+}
+
+/* Eye icon perfectly centered */
+.eye-icon {
+  padding-bottom: 15px;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.eye-icon:hover {
+  opacity: 1;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  background: #0a2a66;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #071f4a;
+}
+
+/* Switch text */
+.auth-switch {
+  margin-top: 16px;
+  font-size: 17px;
+}
+
+.auth-switch a {
+  color: #0a2a66;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+/* Error */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Animation */
+.animate {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .auth-card {
+    margin: 10px;
+    padding: 24px;
+  }
+}
+/* Page background */
+.auth-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a2a66, #f5a623);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card */
+.auth-card {
+  background: #ffffff;
+  padding: 32px 28px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+/* Logo */
+.auth-logo {
+  width: 130px;
+  margin-bottom: 10px;
+}
+
+/* Heading */
+.auth-card h2 {
+  color: #0a2a66;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* Inputs */
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: #0a2a66;
+}
+
+/* Password wrapper */
+.password-box {
+  position: relative;
+  width: 100%;
+}
+
+/* Space for eye icon */
+.password-box input {
+  padding-right: 44px;
+}
+
+/* Eye icon (perfect center) */
+.eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.eye-icon:hover {
+  opacity: 1;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  background: #0a2a66;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #071f4a;
+}
+
+/* Links */
+.auth-links {
+  margin-top: 16px;
+  font-size: 17px;
+}
+
+.auth-links p {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.auth-links a {
+  color: #0a2a66;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+.forgot-link {
+  display: block;
+  margin-top: 6px;
+  font-size: 17px;
+  color: #0a2a66;
+}
+
+/* Error */
+.error {
+  color: red;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Animation */
+.animate {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .auth-card {
+    margin: 10px;
+    padding: 24px;
+  }
+}
+/* Description text */
+.auth-desc {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+/* OTP container with gap */
+.otp-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* OTP boxes */
+.otp-input {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.otp-input:focus {
+  border-color: #0a2a66;
+  outline: none;
+}
+
+/* Timer text */
+.timer-text {
+  margin-top: 14px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Resend button */
+.resend-btn {
+  margin-bottom: 20px;
+  background: transparent;
+  border: none;
+  color: #0a2a66;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 75%;
+}
+
+.resend-btn:hover {
+  text-decoration: underline;
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .otp-input {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .otp-container {
+    gap: 8px;
+  }
+}
+
