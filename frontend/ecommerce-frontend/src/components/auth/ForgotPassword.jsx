@@ -43,7 +43,7 @@ export default function ForgotPassword() {
           />
 
           <button type="submit" className="login-btn">
-            Get OTP first
+            Get OTP
           </button>
         </form>
 
