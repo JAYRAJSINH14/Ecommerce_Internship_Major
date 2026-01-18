@@ -31,7 +31,10 @@ export default function Login() {
     }
 
     setError("");
-    // 🔐 Call Login API here
+
+    localStorage.setItem("token", "dummy-jwt-token");
+    window.location.href = "/";
+
     alert("Login successful");
   };
 
