@@ -1,23 +1,23 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../../styles/auth.css";
 import logo from "../../assets/images/website_logo.jpg";
 
 export default function ForgotPassword() {
-  const [mobile, setMobile] = useState("");
+  const navigate = useNavigate();
   const [error, setError] = useState("");
+  const [form, setForm] = useState({
+    email: ""
+  });
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleGetOtp = (e) => {
     e.preventDefault();
 
-    if (mobile.length !== 10) {
-      setError("Enter valid 10 digit mobile number");
-      return;
-    }
-
     setError("");
-    // 🔐 Call Forgot Password OTP API here
-    alert("OTP sent to your mobile number");
+    navigate("/verify-otp");
   };
 
   return (
@@ -28,17 +28,19 @@ export default function ForgotPassword() {
         <h2>Password assistance</h2>
 
         <p className="auth-desc">
-          Enter the mobile number associated with your BHARATMART account to receive OTP.
+          Enter the email address associated with your BHARATMART account to receive OTP.
         </p>
 
         {error && <p className="error">{error}</p>}
 
         <form onSubmit={handleGetOtp}>
+          {/* Email */}
           <input
-            type="text"
-            placeholder="Mobile Number"
-            value={mobile}
-            onChange={(e) => setMobile(e.target.value)}
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            value={form.email}
+            onChange={handleChange}
             required
           />
 

@@ -2,17 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/auth.css";
 import logo from "../../assets/images/website_logo.jpg";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function OtpVerification() {
+  const navigate = useNavigate();
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
-  const [error, setError] = useState("");
+  const [error] = useState("");
 
   const [timer, setTimer] = useState(60);
   const [canResend, setCanResend] = useState(false);
 
   const inputsRef = useRef([]);
 
-  /* ⏱️ Countdown Timer */
+  /* Countdown Timer */
   useEffect(() => {
     if (timer === 0) {
       setCanResend(true);
@@ -47,28 +50,32 @@ export default function OtpVerification() {
   };
 
   /* Verify OTP */
-  const handleVerifyOtp = (e) => {
+  const email = localStorage.getItem("otpEmail");
+
+  const handleVerifyOtp = async (e) => {
     e.preventDefault();
+
     const enteredOtp = otp.join("");
 
-    if (enteredOtp.length !== 6) {
-      setError("Please enter valid 6 digit OTP");
-      return;
-    }
+    await axios.post("http://localhost:8080/api/auth/verify-otp", {
+      email,
+      otp: enteredOtp
+    });
 
-    setError("");
-    // 🔐 Call VERIFY OTP API here
-    alert("OTP Verified Successfully!");
+    alert("Email verified successfully");
+    navigate("/login");
   };
 
-  /* 🔁 Resend OTP */
+
+  /* Resend OTP */
   const handleResendOtp = () => {
-    // 🔐 Call RESEND OTP API here
+    // Call RESEND OTP API here
     alert("OTP resent successfully");
 
     setOtp(["", "", "", "", "", ""]);
     setTimer(60);
     setCanResend(false);
+    navigate("/login");
   };
 
   return (
@@ -79,7 +86,7 @@ export default function OtpVerification() {
         <h2>Verify OTP</h2>
 
         <p className="auth-desc">
-          Enter the 6 digit OTP sent to your registered mobile number.
+          Enter the 6 digit OTP sent to your registered email address.
         </p>
 
         {error && <p className="error">{error}</p>}

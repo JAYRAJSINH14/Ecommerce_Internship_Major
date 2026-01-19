@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import "../../styles/auth.css";
 import logo from "../../assets/images/website_logo.jpg";
 import eyeOpen from "../../assets/images/icons/eye-open.jpg";
 import eyeClosed from "../../assets/images/icons/eye-closed.jpg";
+import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     mobile: "",
@@ -20,7 +22,7 @@ export default function Register() {
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleGetOtp = (e) => {
+  const handleGetOtp = async (e) => {
     e.preventDefault();
 
     if (form.password.length < 8)
@@ -33,9 +35,13 @@ export default function Register() {
       setError("Enter valid 10 digit mobile number");
       return;
     }
+    await axios.post("http://localhost:8080/api/auth/register", {
+      email: form.email,
+      password: form.password
+    });
 
-    // Call OTP API here
-    alert("OTP sent successfully!");
+    localStorage.setItem("otpEmail", form.email);
+    navigate("/verify-otp");
   };
 
   return (

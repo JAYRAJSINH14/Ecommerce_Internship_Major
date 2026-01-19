@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../../styles/auth.css";
 import logo from "../../assets/images/website_logo.jpg";
 import eyeOpen from "../../assets/images/icons/eye-open.jpg";
 import eyeClosed from "../../assets/images/icons/eye-closed.jpg";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     mobile: "",
     password: ""
@@ -20,11 +21,6 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (form.mobile.length !== 10) {
-      setError("Enter valid 10 digit mobile number");
-      return;
-    }
-
     if (form.password.length < 8) {
       setError("Password must be at least 8 characters");
       return;
@@ -33,9 +29,7 @@ export default function Login() {
     setError("");
 
     localStorage.setItem("token", "dummy-jwt-token");
-    window.location.href = "/";
-
-    alert("Login successful");
+    navigate("/verify-otp");
   };
 
   return (
@@ -48,12 +42,12 @@ export default function Login() {
         {error && <p className="error">{error}</p>}
 
         <form onSubmit={handleLogin}>
-          {/* Mobile Number */}
+          {/* Email */}
           <input
-            type="text"
-            name="mobile"
-            placeholder="Mobile Number"
-            value={form.mobile}
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            value={form.email}
             onChange={handleChange}
             required
           />

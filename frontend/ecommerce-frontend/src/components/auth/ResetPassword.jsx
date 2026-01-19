@@ -34,10 +34,7 @@ export default function ResetPassword() {
     }
 
     setError("");
-    // 🔐 Call RESET PASSWORD API here
     alert("Password updated successfully");
-
-    // Redirect to login
     navigate("/login");
   };
 
